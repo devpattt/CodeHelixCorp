@@ -14,7 +14,7 @@
         <li><a href="#list">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#att">More</a></li>
-            <li><a href="attraction.php">Attractions</a></li> 
+            <li><a href="elearning.php">E-Learning Materials</a></li> 
         </ul>
     </header>
 
