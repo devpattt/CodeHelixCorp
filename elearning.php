@@ -19,13 +19,13 @@
         <div class="nav-links">
             <a href="index.php">Home</a>
             <a href="blog.php">Blog</a>
-            <a href="aboutus.php">About us</a>
+            <a href="about.php">About us</a>
         </div>
     </nav>
 
     <div class="main">
         <div class="info">
-            <h1>Nigga wala na ako maisip na lalagay, <br>fuck CodeHelixCorp</h1>
+            <h1>CodeHelixCorp<br>E-Learning Materials</h1>
             <p>Embark on a journey through the digital realm, where cyber sentinels stand guard and knowledge reigns supreme, 
                 in our eLearning material on cybersecurity.</p>
          
@@ -46,7 +46,7 @@
                 <h4>E-Learning Material #1</h4>
             </div>
             <p>Explore cybersecurity essentials with our eLearning material. From basic hygiene to advanced threat detection, our curriculum equips you with practical skills to defend against cyber threats. Engaging content and interactive exercises ensure you're prepared to safeguard digital assets effectively."</p>
-            <a href="mayon.php">View More</a> <!-- Add a View More link -->
+            <a href="">View More</a>
         </div>
     </div>
     <div class="item">
@@ -57,7 +57,7 @@
                 <h4>E-Learning Material #2</h4>
             </div>
             <p>Unlock the secrets of cybersecurity with our innovative eLearning content. From understanding the psychology behind cyber attacks to implementing robust defense strategies, our material covers the full spectrum of digital security. Dive into real-world case studies, interactive simulations, and hands-on exercises to master the art of protecting data in today's digital age. Whether you're a beginner or an experienced professional, our comprehensive curriculum will elevate your cybersecurity prowess and empower you to navigate the ever-evolving landscape of online threats</p>
-            <a href="Hinatuan.php">View More</a> <!-- Add a View More link -->
+            <a href="#">View More</a> 
         </div>
     </div>
     <div class="item">
