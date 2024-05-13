@@ -12,8 +12,8 @@
         <div class="logo">CodeHelixCorp</div>
         <ul class="menu">
         <li><a href="#list">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#att">More</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#att">Blogs</a></li>
             <li><a href="elearning.php">E-Learning Materials</a></li> 
         </ul>
     </header>
