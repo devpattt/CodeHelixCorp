@@ -21,7 +21,7 @@
     <!-- slider -->
 
     <div class="slider">
-        <!-- list Items -->
+
         <div class="list">
             <div class="item active">
                 <img src="Img/Black Elegant and Modern Startup Pitch Deck Presentation.png">
