@@ -237,3 +237,14 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+        /* Additions for reCAPTCHA */
+        .g-recaptcha {
+            margin: 10px auto;
+        }
+
+        /* Additions for password policy error message */
+        .password-policy-error {
+            color: red;
+            font-size: 12px;
+        }
