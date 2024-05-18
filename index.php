@@ -1,6 +1,3 @@
-<?php
-    
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +17,7 @@
             <li><a href="elearning.php">E-Learning Materials</a></li> 
         </ul>
     </header>
-
     <!-- slider -->
-
     <div class="slider">
 
         <div class="list">
@@ -142,8 +137,7 @@
                     </p>
                 </div>
             </div>
-            
-            
+             
         </div>
         <!-- button arrows -->
         <div class="arrows">
@@ -215,7 +209,6 @@
         </div>
     </div>
 
-
     <div class="about" id="about">
         <div class="left">
             <img src="img/pexels-photo-flasssssssssssss.webp">
@@ -268,7 +261,6 @@
         </div>
     </div>
 
-
     <footer>
     <h5>Philippines</h5>
         <div class="top">
@@ -288,7 +280,6 @@
             </div>
         </div>
     </footer>
-
 
     <script src="index.js"></script>
 </body>
