@@ -2,7 +2,7 @@
 session_start();
 
 include("connection.php");
-include("register.php");
+include("functions.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $user_name = $_POST['user_name'];
@@ -59,17 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         // Sign-Up
         if (!empty($user_name) && !empty($email) && !empty($password) && !is_numeric($user_name)) {
             // Save sa database
-           // Function to generate a random number of a specified length
-            function random_num($length) {
-                $characters = '0123456789';
-                $randomString = '';
-                for ($i = 0; $i < $length; $i++) {
-                    $randomString .= $characters[rand(0, strlen($characters) - 1)];
-                }
-                return $randomString;
-            }
-
-            // Usage example:
             $user_id = random_num(20);
             $query = "INSERT INTO users (user_id, user_name, password, email) VALUES ('$user_id', '$user_name', '$hashedPassword', '$email')";  
             mysqli_query($con, $query);
@@ -80,8 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 }
 }    
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <div class="container" id="container">
     <!-- Sign-up form with reCAPTCHA and password policy validation -->
     <div class="form-container sign-up">
-        <form action="register.php" class="sign-up-form" method="POST">
+        <form action="#" class="sign-up-form" method="POST">
             <h1>Create Account</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -116,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     <!-- Sign-in form with reCAPTCHA -->
     <div class="form-container sign-in">
-        <form action="register.php" class="sign-in-form" method="POST">
+        <form action="#" class="sign-in-form" method="POST">
             <h1>Sign In</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -150,7 +139,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </div>
 
     
-    <script src="reg.js"></script>
+ 
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const signInButton = document.getElementById('signInButton');
+    const signUpButton = document.getElementById('signUpButton');
+    const container = document.getElementById('container');
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("active");
+    });
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("active");
+    });
+});
+</script>
 
 </body>
 
