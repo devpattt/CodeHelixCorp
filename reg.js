@@ -88,3 +88,12 @@ function checkUserCredentials(username, password) {
 
     return username === validUsername && password === validPassword;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('sign-in');
+    
+    button.addEventListener('click', function() {
+        alert('Button clicked!');
+        // You can perform any action you want to test here
+    });
+});

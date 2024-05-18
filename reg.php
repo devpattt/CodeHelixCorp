@@ -1,11 +1,86 @@
 <?php
 session_start();
 
+include("connection.php");
+include("register.php");
 
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $user_name = $_POST['user_name'];
+    $password = $_POST['password'];
+
+
+    if (isset($_POST['sign-in'])) {
+        // Sign-In
+        $user_name = $_POST['user_name'];
+        $password = $_POST['password'];
+    
+        if (!empty($user_name) && !empty($password)) {
+            // Assuming $con is defined and represents your database connection
+            // Check if the user exists in the 'users' table using prepared statements
+            $query = "SELECT * FROM users WHERE user_name = ? AND password = ?";
+            $stmt = mysqli_prepare($con, $query);
+            mysqli_stmt_bind_param($stmt, "ss", $user_name, $password);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+    
+            // Check if the user exists in the 'admin' table using prepared statements
+            $query2 = "SELECT * FROM admins WHERE AD_user = ? AND AD_pass = ?";
+            $stmt2 = mysqli_prepare($con, $query2);
+            mysqli_stmt_bind_param($stmt2, "ss", $user_name, $password);
+            mysqli_stmt_execute($stmt2);
+            $result2 = mysqli_stmt_get_result($stmt2);
+    
+            if (mysqli_num_rows($result) == 1) {
+                // Successful sign-in for a regular user
+                $_SESSION['user_name'] = $user_name;
+        
+                // You can use $user_name, $password, or other data here
+        
+                header("Location: index.php");
+                die;
+            } elseif (mysqli_num_rows($result2) == 1) {
+                // Successful sign-in for an admin
+                $_SESSION['user_name'] = $user_name;
+                header("Location: admin.php");
+                die;
+            } else {
+                echo '<div class="error-message">Invalid username or password. Please try again.</div>';
+            }
+    
+            mysqli_close($con);
+        }
+    }
+    elseif (isset($_POST['sign-up'])) {
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $user_name = $_POST['user_name'];
+            $password = $_POST['password'];
+            $email = $_POST['email'];
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        // Sign-Up
+        if (!empty($user_name) && !empty($email) && !empty($password) && !is_numeric($user_name)) {
+            // Save sa database
+           // Function to generate a random number of a specified length
+            function random_num($length) {
+                $characters = '0123456789';
+                $randomString = '';
+                for ($i = 0; $i < $length; $i++) {
+                    $randomString .= $characters[rand(0, strlen($characters) - 1)];
+                }
+                return $randomString;
+            }
+
+            // Usage example:
+            $user_id = random_num(20);
+            $query = "INSERT INTO users (user_id, user_name, password, email) VALUES ('$user_id', '$user_name', '$hashedPassword', '$email')";  
+            mysqli_query($con, $query);
+            header("Location: reg.php");
+            die;
+        
+        } 
+    }
+}
+}    
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -23,7 +98,7 @@ session_start();
 <div class="container" id="container">
     <!-- Sign-up form with reCAPTCHA and password policy validation -->
     <div class="form-container sign-up">
-        <form action="#" class="sign-up-form" method="POST">
+        <form action="register.php" class="sign-up-form" method="POST">
             <h1>Create Account</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -41,7 +116,7 @@ session_start();
 
     <!-- Sign-in form with reCAPTCHA -->
     <div class="form-container sign-in">
-        <form action="#" class="sign-in-form" method="POST">
+        <form action="register.php" class="sign-in-form" method="POST">
             <h1>Sign In</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>

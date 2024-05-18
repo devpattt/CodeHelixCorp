@@ -1,11 +1,10 @@
 <?php
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "code_helix";
-
-if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
-{
-    die("failed to connect!");
-
+$host="localhost";
+$user="root";
+$pass="";
+$db="code_helix";
+$conn=new mysqli($host,$user,$pass,$db);
+if($conn->connect_error){
+    echo "Failed to connect DB".$conn->connect_error;
 }
+?>

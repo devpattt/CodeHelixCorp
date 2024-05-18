@@ -89,6 +89,11 @@ body{
     cursor: pointer;
 }
 
+#registerBtn,
+#loginBtn {
+    cursor: pointer;
+}
+
 .container button.hidden{
     background-color: transparent;
     border-color: #fff;
