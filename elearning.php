@@ -39,7 +39,7 @@
 
     <div class="featured" id="Featu">
     <div class="item">
-        <img src="img/CodeHelixCorp Your Cyber Security Partner.png">
+        <img src="img/pikpik1.png">
         <div class="details">
             <h3>Master Cyber Security: Essential eLearning Series</h3>
             <div class="item-info">
@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="item">
-        <img src="img/CODEHELIXCORP.png">
+        <img src="img/pipik2.png">
         <div class="details">
             <h3>Cyber Security Essentials E-Learning Webinar</h3>
             <div class="item-info">
@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="item">
-        <img src="img/calle-crisologoitem.jpg">
+        <img src="img/pikpik3.png">
         <div class="details">
             <h3>Calle Crisologo</h3>
             <div class="item-info">
@@ -75,7 +75,7 @@
         </div>
     </div>
     <div class="item">
-        <img src="img/lescabanes item.jpg">
+        <img src="img/pikpik4.png">
         <div class="details">
             <h3>Las Cabanas Beach</h3>
             <div class="item-info">
@@ -86,7 +86,7 @@
         </div>
     </div>
     <div class="item">
-        <img src="img/litleeeeeeeeeeeeeborac.jpg">
+        <img src="img/pikpik5.png">
         <div class="details">
             <h3>Little Boracay </h3>
             <div class="item-info">

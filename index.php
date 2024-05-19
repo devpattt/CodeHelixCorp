@@ -36,109 +36,64 @@
                 </div>
             </div>
             <div class="item">
-                <img src="img/2.png">
-                <div class="content">
-                    <p>Alaminos, Pangasinan</p>
-                    <h2>Hundred Island</h2>
-                    <p>
-                    CodeHelix offers a wide range of product designed to meet our customers needs.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="img/3.png">
-                <div class="content">
-                    <p>El Nido, Palawan</p>
-                    <h2>Las Cabanas</h2>
-                    <p>                
-                    Las Cabanas Beach is a renowned coastal gem situated near El Nido in Palawan, Philippines. With its powdery white
-                     sand, crystal-clear turquoise waters, and dramatic limestone cliffs, Las Cabanas Beach offers a breathtaking 
-                     tropical escape.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="img/4.png">
-                <div class="content">
-                    <p>Nasugbu, Batangas</p>
-                    <h2>Little Boracay</h2>
-                    <p>
-                    "Little Boracay" is a charming beach destination located in Nasugbu, Batangas, Philippines. Known for its pristine
-                     white sand shores and clear turquoise waters, Little Boracay offers visitors a serene and picturesque getaway 
-                     reminiscent of the famous Boracay Island. 
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="img/5.png">
-                <div class="content">
-                    <p>Basco, Batanes</p>
-                    <h2>Basco Lighthouse</h2>
-                    <p>
-                    The Basco Lighthouse is an iconic landmark located in Basco, the capital of Batanes province in the Philippines. Perched atop Naidi Hill,
-                     this picturesque lighthouse offers panoramic views of the surrounding landscapes, including the rugged coastlines 
-                     and the vast expanse of the West Philippine Sea.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
                 <img src="img/6.png">
                 <div class="content">
-                    <p>Vigan</p>
-                    <h2>Calle Crisologo</h2>
-                    <p>          
-                    Calle Crisologo is a historic cobblestone street located in Vigan City, Philippines. It is renowned for its well-preserved Spanish 
-                    colonial architecture, which dates back to the 16th century.  
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="img/7.png">
-                <div class="content">
-                    <p>Intramuros, Manila</p>
-                    <h2>Fort Santiago</h2>
-                    <p>      
-                        Fort Santiago is a historic citadel located in Intramuros, Manila, Philippines. Built by Spanish conquistador Miguel López de 
-                        Legazpi in the late 16th century, it served as a defensive fortress to protect Manila from foreign invasions.
+                    <p>CodeHelixCorp</p>
+                    <h2>Mission</h2>
+                    <p>
+                    At CodeHelix, our mission is to provide individuals
+                    and businesses with the necessary tools, resources, and
+                    knowledge they need, ensuring their safety and success in this
+                    digital world.
                     </p>
                 </div>
             </div>
             <div class="item">
                 <img src="img/8.png">
                 <div class="content">
-                    <p>Sabtang, Batanes</p>
-                    <h2>Chamantad Tinan </h2>
-                    <p>
-                    Chamantad Tinan Cove is a stunning natural attraction located on the island of Sabtang in the province of Batanes, Philippines. 
-                    It is renowned for its picturesque landscape, characterized by towering cliffs, lush greenery, and pristine white sand beaches.
-                    </p>
-                </div>
-            </div>
-            <div class="item" id="list">
-                <img src="img/9.png">
-                <div class="content">
-                    <p>Surigao, Del Sur</p>
-                    <h2>Hinatuan River</h2>
-                    <p>
-                        The Hinatuan Enchanted River is a captivating natural wonder located in Barangay Talisay, Hinatuan, Surigao del Sur,
-                         Philippines. This majestic river is renowned for its stunning blue waters, which are crystal clear and seemingly enchanted, 
-                         giving rise to its name.
+                    <p>CodeHelixCorp</p>
+                    <h2>Vision</h2>
+                    <p>                
+                    At CodeHelix, we see a future where everyone, from
+                    individuals and businesses, can navigate the digital world packed
+                    with knowledge and tools.
                     </p>
                 </div>
             </div>
             <div class="item">
-                <img src="img/10.png">
+                <img src="img/7.png">
                 <div class="content">
-                    <p>Sagada Mt. Province</p>
-                    <h2>Hanging Coffins </h2>
+                    <p>CodeHelixCorp</p>
+                    <h2>Products</h2>
                     <p>
-                    Hanging coffins, practiced by indigenous tribes, involve suspending coffins from cliffs or caves, symbolizing a connection to the heavens.
-                    Meanwhile, Sumaguing Cave in Sagada, Philippines, offers adventurous explorers a journey through stunning rock formations, underground rivers,
-                    and natural pools, showcasing the region's natural beauty.
+                    Learning Materials - Extensive collection of learning materials,
+                    including comprehensive tutorials, guides, and resources covering a
+                    wide range of topics such as cybersecurity essentials, and digital
+                    literacy <br>
+                    <br>
+                    Community and Mentorship - Foster a strong sense of community
+                    among users by providing forums, discussion boards, and mentorship
+                    programs where learners can connect with peers and industry
+                    professionals. Encourage collaboration, peer-to-peer learning, and
+                    knowledge sharing.
                     </p>
                 </div>
             </div>
-             
+            <div class="item">
+                <img src="img/9.png">
+                <div class="content">
+                    <p>CodeHelixCorp</p>
+                    <h2>UniqueSellingProposition</h2>
+                    <p>
+                    At CodeHelix, we're not just another online learning platform. What sets us apart is our unwavering commitment to providing a truly
+                    personalized and interactive learning experience. Unlike other options
+                    on the market, we don't believe in a one-size-fits-all approach to
+                    education. Our product is built around the idea that every learner is
+                    unique, with different goals, backgrounds, and learning styles.
+                    </p>
+                </div>
+            </div>
+           
         </div>
         <!-- button arrows -->
         <div class="arrows">
@@ -148,75 +103,46 @@
         <!-- thumbnail -->
         <div class="thumbnail">
             <div class="item active">   
-                <img src="img/mayon1.jpeg">
+                <img src="img/pikpik1.png">
                 <div class="content">
-                Mayon Volcano
+             E-Learning #1
                 </div>
             </div>
             <div class="item">
-                <img src="img/island.jpeg">
+                <img src="img/pipik2.png">
                 <div class="content">
-                Hundred Island
+                E-Learning #2
                 </div>
             </div>
             <div class="item">
-                <img src="img/les cabanes.jpeg">
+                <img src="img/pikpik3.png">
                 <div class="content">
-                Las Cabanas Beach
+                E-Learning #3
                 </div>
             </div>
             <div class="item">
-                <img src="img/little borac.jpg">
+                <img src="img/pikpik4.png">
                 <div class="content">
-                Little Boracay
+                E-Learning #4
                 </div>
             </div>
             <div class="item">
-                <img src="img/lihhthouse.jpeg">
+                <img src="img/pikpik5.png">
                 <div class="content">
-                Basco Lighthouse
+                E-Learning #5
                 </div>
             </div>
-            <div class="item">
-                <img src="img/Calle Crisologo.jpeg">
-                <div class="content">
-                Calle Crisologo
-                </div>
-            </div>
-            <div class="item">
-                <img src="img/Fort Santiago.jpeg">
-                <div class="content">
-                Fort Santiago
-                </div>
-            </div>
-            <div class="item">
-                <img src="img/Chamantad Tinan.jpg">
-                <div class="content">
-                Chamantad Tinan
-                </div>
-            </div>
-            <div class="item">
-                <img src="img/Hinatuan Enchanted RIver.jpg">
-                <div class="content">
-                Hinatuan River
-                </div>
-            </div>
-            <div class="item">
-                <img src="img/Hanging Coffins and Sumaging Cave.jpg">
-                <div class="content">
-                Hanging Coffins
-                </div>
-            </div>
+           
         </div>
     </div>
 
     <div class="about" id="about">
         <div class="left">
-            <img src="img/pexels-photo-flasssssssssssss.webp">
+            <img src="img/pipik2.png">
         </div>
         <div class="right">
-            <h5>Discover the Philippines: Where Dreams Come Alive</h5>
-            <p>Get ready for a journey like no other, where every moment is a melody and every sight a symphony. From the emerald isles to the bustling cities, the Philippines invites you to dive into a world of endless wonder and unforgettable experiences. Let your senses awaken as you explore paradise found in every corner of this breathtaking archipelago.</p>
+            <h5>CodeHelixCorp</h5>
+            <p>"Embracing every challenge and opportunity, I've grown alongside this company, transforming knowledge into impact."</p>
         </div>
     </div>
 
@@ -229,33 +155,33 @@
 
         <div class="attract-items">
             <div class="item">
-                <img src="img/pic1.jpeg">
+                <img src="img/pikpik3.png">
                 <div class="info">
-                    <h4>What makes the Philippines a must-see destination?</h4>
+                    <h4>ALL IN PACKAGE(3 Packages of ELearning Materials)</h4>
                     <p>
-                    With its breathtaking beaches, diverse culture, and thrilling adventures like volcano trekking and island hopping, the Philippines offers unforgettable experiences for travelers seeking both natural wonders and cultural immersion.
+                    One time purchase of ₱250
                     </p>
-                    <a href="https://www.youtube.com/watch?v=ZjFzkhrqIZs">View in Youtube <i class='bx bx-link-external'></i></a>
+                    <a href="https://www.youtube.com/watch?v=ZjFzkhrqIZs">Buy Now <i class='bx bx-link-external'></i></a>
                 </div>
             </div>
             <div class="item">
-                <img src="img/free-photo-of-birds-eye-view-of-a-man-surfing-on-the-sea-water.jpeg">
+                <img src="img/pikpik1.png">
                 <div class="info">
-                    <h4>How does the Philippines offer unique and memorable experiences for travelers?</h4>
-                    <p>       
-                        The Philippines offers a wide range of activities for adventurous souls. From trekking to the crater of an active volcano in Mt. Pinatubo to surfing the waves in Siargao, or activities like canyoneering in Kawasan Falls.
+                    <h4>ALL IN PACKAGE(3 Packages of ELearning Materials)</h4>
+                    <p>
+                    One time purchase of ₱250
                     </p>
-                    <a href="https://www.youtube.com/watch?v=ThtXz7RILWs">View in Youtube <i class='bx bx-link-external'></i></a>
+                    <a href="https://www.youtube.com/watch?v=ZjFzkhrqIZs">Buy Now <i class='bx bx-link-external'></i></a>
                 </div>
             </div>
             <div class="item">
-                <img src="img/pic2.jpeg">
+                <img src="img/pikpik5.png">
                 <div class="info">
-                    <h4>What sets the Philippines apart as a travel destination?</h4>
+                    <h4>ALL IN PACKAGE(3 Packages of ELearning Materials)</h4>
                     <p>
-                    With its blend of stunning landscapes, vibrant festivals, and endless opportunities for adventure, the Philippines beckons explorers to discover its enchanting beauty and warm hospitality.
+                    One time purchase of ₱250
                     </p>
-                    <a href="https://www.youtube.com/shorts/yjvOK6Qnkqo">View in Youtube <i class='bx bx-link-external'></i></a>
+                    <a href="https://www.youtube.com/watch?v=ZjFzkhrqIZs">Buy Now <i class='bx bx-link-external'></i></a>
                 </div>
             </div>
             
