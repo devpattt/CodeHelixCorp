@@ -24,7 +24,7 @@
 
         <div class="list">
             <div class="item active">
-                <img src="Img/Black Elegant and Modern Startup Pitch Deck Presentation.png">
+                <img src="Img/backgroundnumber1.png">
                 <div class="content">
                     <p>Welcome at</p>
                     <h2>CodeHelix Corp</h2>
