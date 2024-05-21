@@ -4,75 +4,75 @@ session_start();
 include("connection.php");
 include("functions.php");
 
+// Define the validate function
+function validate($data) {
+    return htmlspecialchars(stripslashes(trim($data)));
+}
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $user_name = $_POST['user_name'];
-    $password = $_POST['password'];
-
-
     if (isset($_POST['sign-in'])) {
         // Sign-In
-        $user_name = $_POST['user_name'];
-        $password = $_POST['password'];
-    
-        if (!empty($user_name) && !empty($password)) {
-            // Assuming $con is defined and represents your database connection
-            // Check if the user exists in the 'users' table using prepared statements
-            $query = "SELECT * FROM users WHERE user_name = ? AND password = ?";
+        $user_nameInput = validate($_POST['user_name']);
+        $passwordInput = validate($_POST['password']);
+
+        $user_name = filter_var($user_nameInput, FILTER_SANITIZE_STRING);
+        $password = filter_var($passwordInput, FILTER_SANITIZE_STRING);
+
+        if ($user_name != '' && $password != '') {
+            $query = "SELECT * FROM users WHERE user_name = ? LIMIT 1";
             $stmt = mysqli_prepare($con, $query);
-            mysqli_stmt_bind_param($stmt, "ss", $user_name, $password);
+            mysqli_stmt_bind_param($stmt, "s", $user_name);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
-    
-            // Check if the user exists in the 'admin' table using prepared statements
-            $query2 = "SELECT * FROM admins WHERE AD_user = ? AND AD_pass = ?";
-            $stmt2 = mysqli_prepare($con, $query2);
-            mysqli_stmt_bind_param($stmt2, "ss", $user_name, $password);
-            mysqli_stmt_execute($stmt2);
-            $result2 = mysqli_stmt_get_result($stmt2);
-    
-            if (mysqli_num_rows($result) == 1) {
-                // Successful sign-in for a regular user
-                $_SESSION['user_name'] = $user_name;
-        
-                // You can use $user_name, $password, or other data here
-        
-                header("Location: index.php");
-                die;
-            } elseif (mysqli_num_rows($result2) == 1) {
-                // Successful sign-in for an admin
-                $_SESSION['user_name'] = $user_name;
-                header("Location: admin.php");
-                die;
+
+            if ($result && mysqli_num_rows($result) == 1) {
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+                $hashedPassword = $row['password'];
+                if (!password_verify($password, $hashedPassword)) {
+                    echo '<div class="error-message">Invalid Password. Please try again.</div>';
+                } else {
+                    $_SESSION['user_name'] = $user_name;
+                    if ($row['role'] == 'admin') {
+                        header("Location: admin.php");
+                    } else {
+                        header("Location: index.php");
+                    }
+                    die;
+                }
             } else {
                 echo '<div class="error-message">Invalid username or password. Please try again.</div>';
             }
-    
-            mysqli_close($con);
+        } else {
+            echo '<div class="error-message">Please fill in all fields.</div>';
+        }
+    } elseif (isset($_POST['sign-up'])) {
+        // Sign-Up
+        $user_name = validate($_POST['user_name']);
+        $password = validate($_POST['password']);
+        $email = validate($_POST['email']);
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+        if (!empty($user_name) && !empty($email) && !empty($password) && !is_numeric($user_name)) {
+            $user_id = random_num(20);
+            $query = "INSERT INTO users (user_id, user_name, password, email) VALUES (?, ?, ?, ?)";
+            $stmt = mysqli_prepare($con, $query);
+
+            if ($stmt) {
+                mysqli_stmt_bind_param($stmt, "ssss", $user_id, $user_name, $hashedPassword, $email);
+                mysqli_stmt_execute($stmt);
+                header("Location: reg.php");
+                die;
+            } else {
+                echo '<div class="error-message">Failed to prepare the SQL statement.</div>';
+            }
+        } else {
+            echo '<div class="error-message">Please fill in all fields correctly.</div>';
         }
     }
-    elseif (isset($_POST['sign-up'])) {
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $user_name = $_POST['user_name'];
-            $password = $_POST['password'];
-            $email = $_POST['email'];
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            echo password_verify($input, $hashedPassword);
-
-        // Sign-Up
-        if (!empty($user_name) && !empty($email) && !empty($password) && !is_numeric($user_name)) {
-            // Save sa database
-            $user_id = random_num(20);
-            $query = "INSERT INTO users (user_id, user_name, password, email) VALUES ('$user_id', '$user_name', '$hashedPassword', '$email')";  
-            mysqli_query($con, $query);
-            header("Location: reg.php");
-            die;
-        
-        } 
-    }
 }
-}    
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <div class="container" id="container">
     <!-- Sign-up form with reCAPTCHA and password policy validation -->
     <div class="form-container sign-up">
-        <form action="#" class="sign-up-form" method="POST">
+        <form action="reg.php" class="sign-up-form" method="POST">
             <h1>Create Account</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     <!-- Sign-in form with reCAPTCHA -->
     <div class="form-container sign-in">
-        <form action="#" class="sign-in-form" method="POST">
+        <form action="reg.php" class="sign-in-form" method="POST">
             <h1>Sign In</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>

@@ -16,6 +16,7 @@
             <li><a href="#about">About Us</a></li>
             <li><a href="#att">Blogs</a></li>
             <li><a href="elearning.php">E-Learning Materials</a></li> 
+            <li><a href="reg.php">Log-out</a></li>
         </ul>
     </header>
     <!-- slider -->
