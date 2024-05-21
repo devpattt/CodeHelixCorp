@@ -55,7 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $user_name = $_POST['user_name'];
             $password = $_POST['password'];
             $email = $_POST['email'];
-            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            echo password_verify($input, $hashedPassword);
+
         // Sign-Up
         if (!empty($user_name) && !empty($email) && !empty($password) && !is_numeric($user_name)) {
             // Save sa database
