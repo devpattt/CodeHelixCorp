@@ -61,6 +61,15 @@
             top: 10px;
             right: 10px;
         }
+
+        .button-container {
+            display: flex;
+        }
+
+        .button-container a {
+            margin-right: 10px; /* Adjust the spacing between links */
+        }
+
     </style>
 </head>
 <body>
@@ -212,7 +221,10 @@
                 <div class="info">
                     <h4>ALL IN PACKAGE (3 Packages of E-Learning Materials)</h4>
                     <p>One time purchase of ₱250</p>
-                    <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
+                    <div class="button-container">
+                        <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
+                        <a href="#">View More</a>
+                    </div>
                 </div>
             </div>
             <div class="item">
@@ -220,7 +232,10 @@
                 <div class="info">
                     <h4>ALL IN PACKAGE (3 Packages of E-Learning Materials)</h4>
                     <p>One time purchase of ₱250</p>
-                    <a href="#" onclick="openModal('Product 2', 250)">Buy Now <i class='bx bx-link-external'></i></a>
+                    <div class="button-container">
+                        <a href="#" onclick="openModal('Product 2', 250)">Buy Now <i class='bx bx-link-external'></i></a>
+                        <a href="#">View More</a>
+                    </div>
                 </div>
             </div>
             <div class="item">
@@ -228,7 +243,10 @@
                 <div class="info">
                     <h4>ALL IN PACKAGE (3 Packages of E-Learning Materials)</h4>
                     <p>One time purchase of ₱250</p>
-                    <a href="#" onclick="openModal('Product 3', 250)">Buy Now <i class='bx bx-link-external'></i></a>
+                    <div class="button-container">
+                        <a href="#" onclick="openModal('Product 3', 250)">Buy Now <i class='bx bx-link-external'></i></a>
+                        <a href="#">View More</a>
+                    </div>
                 </div>
             </div>
         </div>
