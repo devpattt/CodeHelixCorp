@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philippines</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+        .modal-content h2 {
+            margin-top: 0;
+            color: black;
+        }
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            color: black;
+        }
+        .modal-content form input,
+        .modal-content form button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .modal-content form button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .modal-content form button:hover {
+            background-color: #0056b3;
+        }
+        .close-btn {
+            background-color: red;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
 </head>
 <body>
-        <!-- header -->
+    <!-- header -->
     <header>
         <div class="logo">CodeHelixCorp</div>
         <ul class="menu">
-        <li><a href="#list">Home</a></li>
+            <li><a href="#list">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#att">Blogs</a></li>
             <li><a href="elearning.php">E-Learning Materials</a></li> 
@@ -21,10 +77,9 @@
     </header>
     <!-- slider -->
     <div class="slider">
-
         <div class="list">
             <div class="item active">
-                <img src="Img/backgroundnumber1.png">
+                <img src="Img/14.png">
                 <div class="content">
                     <p>Welcome at</p>
                     <h2>CodeHelix Corp</h2>
@@ -94,7 +149,6 @@
                     </p>
                 </div>
             </div>
-           
         </div>
         <!-- button arrows -->
         <div class="arrows">
@@ -106,7 +160,7 @@
             <div class="item active">   
                 <img src="img/pikpik1.png">
                 <div class="content">
-             E-Learning #1
+                E-Learning #1
                 </div>
             </div>
             <div class="item">
@@ -133,7 +187,6 @@
                 E-Learning #5
                 </div>
             </div>
-           
         </div>
     </div>
 
@@ -153,44 +206,36 @@
                 <h5>View More</h5>
             </div>
         </div>
-
         <div class="attract-items">
             <div class="item">
-                <img src="img/pikpik3.png">
+                <img src="img/pikpik3.png" alt="Product Image 1">
                 <div class="info">
-                    <h4>ALL IN PACKAGE(3 Packages of ELearning Materials)</h4>
-                    <p>
-                    One time purchase of ₱250
-                    </p>
-                    <a href="https://www.youtube.com/watch?v=ZjFzkhrqIZs">Buy Now <i class='bx bx-link-external'></i></a>
+                    <h4>ALL IN PACKAGE (3 Packages of E-Learning Materials)</h4>
+                    <p>One time purchase of ₱250</p>
+                    <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
                 </div>
             </div>
             <div class="item">
-                <img src="img/pikpik1.png">
+                <img src="img/pikpik1.png" alt="Product Image 2">
                 <div class="info">
-                    <h4>ALL IN PACKAGE(3 Packages of ELearning Materials)</h4>
-                    <p>
-                    One time purchase of ₱250
-                    </p>
-                    <a href="https://www.youtube.com/watch?v=ZjFzkhrqIZs">Buy Now <i class='bx bx-link-external'></i></a>
+                    <h4>ALL IN PACKAGE (3 Packages of E-Learning Materials)</h4>
+                    <p>One time purchase of ₱250</p>
+                    <a href="#" onclick="openModal('Product 2', 250)">Buy Now <i class='bx bx-link-external'></i></a>
                 </div>
             </div>
             <div class="item">
-                <img src="img/pikpik5.png">
+                <img src="img/pikpik5.png" alt="Product Image 3">
                 <div class="info">
-                    <h4>ALL IN PACKAGE(3 Packages of ELearning Materials)</h4>
-                    <p>
-                    One time purchase of ₱250
-                    </p>
-                    <a href="https://www.youtube.com/watch?v=ZjFzkhrqIZs">Buy Now <i class='bx bx-link-external'></i></a>
+                    <h4>ALL IN PACKAGE (3 Packages of E-Learning Materials)</h4>
+                    <p>One time purchase of ₱250</p>
+                    <a href="#" onclick="openModal('Product 3', 250)">Buy Now <i class='bx bx-link-external'></i></a>
                 </div>
             </div>
-            
         </div>
     </div>
 
     <footer>
-    <h5>Philippines</h5>
+        <h5>Philippines</h5>
         <div class="top">
             <div class="social-links">
                 <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -209,6 +254,50 @@
         </div>
     </footer>
 
+  <!-- Modal -->
+  <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">X</button>
+            <h2>Checkout</h2>
+            <form id="payment-form">
+                <input type="hidden" id="product" name="product">
+                <input type="hidden" id="price" name="price">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <!-- Stripe Card Element -->
+                <div id="card-element"></div>
+                
+                <button type="submit">Complete Purchase</button>
+            </form>
+            <div id="card-errors" role="alert"></div>
+        </div>
+    </div>
+
+    <script>
+    
+        function stripeTokenHandler(token) {
+            const form = document.getElementById('payment-form');
+            const hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripeToken');
+            hiddenInput.setAttribute('value', token.id);
+            form.appendChild(hiddenInput);
+
+            form.submit();
+        }
+
+        function openModal(product, price) {
+            document.getElementById('product').value = product;
+            document.getElementById('price').value = price;
+            document.getElementById('checkoutModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+    </script>
     <script src="index.js"></script>
 </body>
 </html>
