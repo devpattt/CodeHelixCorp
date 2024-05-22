@@ -271,51 +271,55 @@
             </div>
         </div>
     </footer>
-
-  <!-- Modal -->
-  <div class="modal" id="checkoutModal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal()">X</button>
-            <h2>Checkout</h2>
-            <form id="payment-form">
-                <input type="hidden" id="product" name="product">
-                <input type="hidden" id="price" name="price">
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                
-                <!-- Stripe Card Element -->
-                <div id="card-element"></div>
-                
-                <button type="submit">Complete Purchase</button>
-            </form>
-            <div id="card-errors" role="alert"></div>
-        </div>
+<!-- Modal -->
+<div class="modal" id="checkoutModal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">X</button>
+        <h2>Checkout</h2>
+        <!-- Your checkout form -->
+        <form id="checkoutForm" onsubmit="return submitForm()">
+            <input type="hidden" id="product" name="product">
+            <input type="hidden" id="price" name="price">
+            <input type="number" id="guests" name="guests" required readonly style="display: none;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="check-in">Check-in Date:</label>
+            <input type="date" id="check-in" name="check-in" required>
+            <label for="check-out">Check-out Date:</label>
+            <input type="date" id="check-out" name="check-out" required>
+            <label for="room-type">Room Type:</label>
+            <select id="room-type" name="room-type" required>
+                <option value="">Select Room Type</option>
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="suite">Suite</option>
+            </select>
+            <input type="submit" name="submit" value="Submit">
+            <input type="button" class="back-button" value="Back" onclick="history.back()">
+        </form>
     </div>
+</div>
 
-    <script>
-    
-        function stripeTokenHandler(token) {
-            const form = document.getElementById('payment-form');
-            const hiddenInput = document.createElement('input');
-            hiddenInput.setAttribute('type', 'hidden');
-            hiddenInput.setAttribute('name', 'stripeToken');
-            hiddenInput.setAttribute('value', token.id);
-            form.appendChild(hiddenInput);
+<script>
+    function openModal(product, price) {
+        document.getElementById('product').value = product;
+        document.getElementById('price').value = price;
+        document.getElementById('checkoutModal').style.display = 'flex';
+    }
 
-            form.submit();
-        }
+    function closeModal() {
+        document.getElementById('checkoutModal').style.display = 'none';
+    }
 
-        function openModal(product, price) {
-            document.getElementById('product').value = product;
-            document.getElementById('price').value = price;
-            document.getElementById('checkoutModal').style.display = 'flex';
-        }
+    function submitForm() {
+        // Handle form submission here (e.g., send form data to a server)
+        // Return false to prevent default form submission
+        return false;
+    }
+</script>
 
-        function closeModal() {
-            document.getElementById('checkoutModal').style.display = 'none';
-        }
-    </script>
     <script src="index.js"></script>
 </body>
 </html>
