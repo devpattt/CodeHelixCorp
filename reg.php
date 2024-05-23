@@ -119,14 +119,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <div class="toggle">
             <div class="toggle-panel toggle-left">
                 <img src="img/Codehelixlogo.png" alt="Your Logo" class="logo"> <br>
-                <h1>Welcome Back!</h1>
-                <p>it is what is it</p>
+                <h1>Welcome to CodeHelixCorp!</h1>
+                <p>Dive into a realm of knowledge as you unlock access to our cutting-edge e-learning platform with just a click</p>
                 <button class="hidden" id="signInButton">Sign In</button>
             </div>
             <div class="toggle-panel toggle-right">
                 <img src="img/Codehelixlogo.png" alt="Your Logo" class="logo"> <br>
                 <h1>CodeHelixCorp</h1>
-                <p>kung gusto may paraan, kapag ayaw may lalaki yan</p>
+                <p>Ready to elevate your skills? Join CodeHelixCorp's e-learning community today and unleash your potential with our innovative courses and resources</p>
                 <button class="hidden" id="signUpButton">Sign Up</button>
             </div>
         </div>

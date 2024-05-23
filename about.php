@@ -19,7 +19,6 @@
         <div class="nav-links">
             <a href="index.php">Home</a>
             <a href="elearning.php">E-Learnign Materials</a>
-            <a href="blog.php">Blog</a>
         </div>
     </nav>
 
