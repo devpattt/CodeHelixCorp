@@ -91,11 +91,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="form-container sign-up">
         <form action="reg.php" class="sign-up-form" method="POST">
             <h1>Create Account</h1>
-            <div class="social-icons">
-                <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-            </div>
-            <span>or use your email for registration</span>
             <input type="text" name="user_name" placeholder="Username" />
             <input type="text" name="email" placeholder="Email" />
             <input type="password" name="password" placeholder="Password" />
@@ -109,15 +104,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="form-container sign-in">
         <form action="reg.php" class="sign-in-form" method="POST">
             <h1>Sign In</h1>
-            <div class="social-icons">
-                <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-            </div>
-            <span>or use your email password</span>
             <input type="text" name="user_name" placeholder="Username" />
             <input type="password" name="password" placeholder="Password" />
             <div class="g-recaptcha" data-sitekey="6LdR4OApAAAAAL_ZBVwp7Gw_RbJD-4_L2PxeODJ-"></div>
-            <a href="#">Forget Your Password?</a>
             <input type="submit" name="sign-in" id="loginBtn" value="Login" class="btn solid" />
         </form>
     </div>
@@ -127,13 +116,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <div class="toggle-panel toggle-left">
             <img src="img/Codehelixlogo.png" alt="Your Logo" class="logo"> <br>
                 <h1>Welcome Back!</h1>
-                <p>Enter your personal details to use all of site features</p>
+                <p>it is what is it</p>
                 <button class="hidden" id="signInButton">Sign In</button>
             </div>
             <div class="toggle-panel toggle-right">
                 <img src="img/Codehelixlogo.png" alt="Your Logo" class="logo"> <br>
                 <h1>CodeHelixCorp</h1>
-                <p>a E-Learning Platform</p>
+                <p>with great power, comes with drink responsibility </p>
                 <button class="hidden" id="signUpButton">Sign Up</button>
             </div>
         </div>
