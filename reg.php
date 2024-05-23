@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <div class="toggle-panel toggle-right">
                 <img src="img/Codehelixlogo.png" alt="Your Logo" class="logo"> <br>
                 <h1>CodeHelixCorp</h1>
-                <p>with great power, comes with drink responsibility </p>
+                <p>kung gusto may paraan, kapag ayaw may lalaki yan</p>
                 <button class="hidden" id="signUpButton">Sign Up</button>
             </div>
         </div>
