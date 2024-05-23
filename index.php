@@ -275,20 +275,6 @@
         </div>
     </div>
 
-   <!-- Payment Confirmation Modal -->
-    <div class="modal" id="confirmationModal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeConfirmationModal()">X</button>
-            <h2>Payment Confirmation</h2>
-            <p>Email: <span id="confirmationEmail"></span></p>
-            <p>Payment Method: <span id="confirmationPaymentMethod"></span></p>
-            <p>Cost: <span id="confirmationCost">₱250</span></p>
-            <button onclick="confirmPayment()">Confirm</button>
-        </div>
-    </div>
-
-
-
     <script>
          function openModal(product, price) {
             document.getElementById('product').value = product;

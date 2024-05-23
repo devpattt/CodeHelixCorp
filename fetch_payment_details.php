@@ -11,6 +11,7 @@ if ($mysqli->connect_error) {
 // Check if 'email' key is set in $_POST
 if(isset($_POST['email'])) {
     // Fetch payment details based on the submitted email
+    
     $email = $_POST['email']; // Assuming email is submitted via POST
     $query = "SELECT * FROM payments WHERE email = '$email'"; // Replace 'your_table_name' with your actual table name
     $result = $mysqli->query($query);

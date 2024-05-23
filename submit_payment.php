@@ -20,7 +20,7 @@ $payment_status = 'Pending'; // Default payment status
 $sql = "INSERT INTO payments (email, payment_method, cost, payment_status) VALUES ('$email', '$payment_method', '$cost', '$payment_status')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "New record created successfully, We send you a email confirmation";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
