@@ -37,6 +37,7 @@
             color: black;
         }
         .modal-content form input,
+        .modal-content form select,
         .modal-content form button {
             margin: 10px 0;
             padding: 10px;
@@ -61,139 +62,119 @@
             top: 10px;
             right: 10px;
         }
-
         .button-container {
             display: flex;
         }
-
         .button-container a {
             margin-right: 10px; /* Adjust the spacing between links */
         }
-
     </style>
 </head>
 <body>
     <!-- header -->
     <header>
         <div class="logo">CodeHelixCorp</div>
-        <ul class="menu">
-            <li><a href="#list">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#att">Blogs</a></li>
-            <li><a href="elearning.php">E-Learning Materials</a></li> 
-            <li><a href="reg.php">Log-out</a></li>
-        </ul>
+        <nav>
+            <ul class="menu">
+                <li><a href="#list">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#att">Blogs</a></li>
+                <li><a href="elearning.php">E-Learning Materials</a></li> 
+                <li><a href="reg.php">Log-out</a></li>
+            </ul>
+        </nav>
     </header>
     <!-- slider -->
     <div class="slider">
         <div class="list">
             <div class="item active">
-                <img src="Img/14.png">
+                <img src="Img/14.png" alt="CodeHelix Corp Image 1">
                 <div class="content">
                     <p>Welcome at</p>
                     <h2>CodeHelix Corp</h2>
                     <p>
-                    In 2024, CodeHelix was founded by a group of students driven by their enthusiasm and determination to make a mark in 
-                    the tech world. The name CodeHelix is derived from the word “Helix” which typically refers to a three-dimensional 
-                    curve or spiral shape,  However in a broader sense “Helix” can symbolize growth, progress, and continuous development, 
-                    as it suggest a spiral motion indicating advancement and evolution. 
+                        In 2024, CodeHelix was founded by a group of students driven by their enthusiasm and determination to make a mark in the tech world. The name CodeHelix is derived from the word “Helix” which typically refers to a three-dimensional curve or spiral shape, However in a broader sense “Helix” can symbolize growth, progress, and continuous development, as it suggest a spiral motion indicating advancement and evolution.
                     </p>
                 </div>
             </div>
             <div class="item">
-                <img src="img/6.png">
+                <img src="img/6.png" alt="CodeHelix Corp Image 2">
                 <div class="content">
                     <p>CodeHelixCorp</p>
                     <h2>Mission</h2>
                     <p>
-                    At CodeHelix, our mission is to provide individuals
-                    and businesses with the necessary tools, resources, and
-                    knowledge they need, ensuring their safety and success in this
-                    digital world.
+                        At CodeHelix, our mission is to provide individuals and businesses with the necessary tools, resources, and knowledge they need, ensuring their safety and success in this digital world.
                     </p>
                 </div>
             </div>
             <div class="item">
-                <img src="img/8.png">
+                <img src="img/8.png" alt="CodeHelix Corp Image 3">
                 <div class="content">
                     <p>CodeHelixCorp</p>
                     <h2>Vision</h2>
-                    <p>                
-                    At CodeHelix, we see a future where everyone, from
-                    individuals and businesses, can navigate the digital world packed
-                    with knowledge and tools.
+                    <p>
+                        At CodeHelix, we see a future where everyone, from individuals and businesses, can navigate the digital world packed with knowledge and tools.
                     </p>
                 </div>
             </div>
             <div class="item">
-                <img src="img/7.png">
+                <img src="img/7.png" alt="CodeHelix Corp Image 4">
                 <div class="content">
                     <p>CodeHelixCorp</p>
                     <h2>Products</h2>
                     <p>
-                    Learning Materials - Extensive collection of learning materials,
-                    including comprehensive tutorials, guides, and resources covering a
-                    wide range of topics such as cybersecurity essentials, and digital
-                    literacy <br>
-                    <br>
-                    Community and Mentorship - Foster a strong sense of community
-                    among users by providing forums, discussion boards, and mentorship
-                    programs where learners can connect with peers and industry
-                    professionals. Encourage collaboration, peer-to-peer learning, and
-                    knowledge sharing.
+                        Learning Materials - Extensive collection of learning materials, including comprehensive tutorials, guides, and resources covering a wide range of topics such as cybersecurity essentials, and digital literacy <br>
+                        <br>
+                        Community and Mentorship - Foster a strong sense of community among users by providing forums, discussion boards, and mentorship programs where learners can connect with peers and industry professionals. Encourage collaboration, peer-to-peer learning, and knowledge sharing.
                     </p>
                 </div>
             </div>
             <div class="item">
-                <img src="img/9.png">
+                <img src="img/9.png" alt="CodeHelix Corp Image 5">
                 <div class="content">
                     <p>CodeHelixCorp</p>
-                    <h2>UniqueSellingProposition</h2>
+                    <h2>Unique Selling Proposition</h2>
                     <p>
-                    At CodeHelix, we're not just another online learning platform. What sets us apart is our unwavering commitment to providing a truly
-                    personalized and interactive learning experience. Unlike other options
-                    on the market, we don't believe in a one-size-fits-all approach to
-                    education. Our product is built around the idea that every learner is
-                    unique, with different goals, backgrounds, and learning styles.
+                        At CodeHelix, we're not just another online learning platform. What sets us apart is our unwavering commitment to providing a truly personalized and interactive learning experience. Unlike other options on the market, we don't believe in a one-size-fits-all approach to education. Our product is built around the idea that every learner is unique, with different goals, backgrounds, and learning styles.
                     </p>
                 </div>
             </div>
         </div>
         <!-- button arrows -->
         <div class="arrows">
-            <button id="prev"><</button>
-            <button id="next">></button>
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
         </div>
         <!-- thumbnail -->
         <div class="thumbnail">
             <div class="item active">   
-                <img src="img/pikpik1.png">
+                <img src="img/pikpik1.png" alt="E-Learning #1">
                 <div class="content">
-                E-Learning #1
+                    E-Learning #1
                 </div>
             </div>
             <div class="item">
-                <img src="img/pipik2.png">
+                <img src="img/pipik2.png" alt="E-Learning #2">
                 <div class="content">
-                E-Learning #2
+                    E-Learning #2
                 </div>
             </div>
             <div class="item">
-                <img src="img/pikpik3.png">
+                <img src="img/pikpik3.png" alt="E-Learning #3">
                 <div class="content">
-                E-Learning #3
+                    E-Learning #3
                 </div>
             </div>
             <div class="item">
-                <img src="img/pikpik4.png">
+                <img src="img/pikpik4.png" alt="E-Learning #4">
                 <div class="content">
-                E-Learning #4
+                    E-Learning #4
                 </div>
             </div>
             <div class="item">
-                <img src="img/pikpik5.png">
+                <img src="img/pikpik5.png" alt="E-Learning #5">
                 <div class="content">
-                E-Learning #5
+                    E-Learning #5
                 </div>
             </div>
         </div>
@@ -201,7 +182,7 @@
 
     <div class="about" id="about">
         <div class="left">
-            <img src="img/pipik2.png">
+            <img src="img/pipik2.png" alt="About Us Image">
         </div>
         <div class="right">
             <h5>CodeHelixCorp</h5>
@@ -271,55 +252,116 @@
             </div>
         </div>
     </footer>
-<!-- Modal -->
-<div class="modal" id="checkoutModal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeModal()">X</button>
-        <h2>Checkout</h2>
-        <!-- Your checkout form -->
-        <form id="checkoutForm" onsubmit="return submitForm()">
-            <input type="hidden" id="product" name="product">
-            <input type="hidden" id="price" name="price">
-            <input type="number" id="guests" name="guests" required readonly style="display: none;">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="check-in">Check-in Date:</label>
-            <input type="date" id="check-in" name="check-in" required>
-            <label for="check-out">Check-out Date:</label>
-            <input type="date" id="check-out" name="check-out" required>
-            <label for="room-type">Room Type:</label>
-            <select id="room-type" name="room-type" required>
-                <option value="">Select Room Type</option>
-                <option value="single">Single</option>
-                <option value="double">Double</option>
-                <option value="suite">Suite</option>
-            </select>
-            <input type="submit" name="submit" value="Submit">
-            <input type="button" class="back-button" value="Back" onclick="history.back()">
-        </form>
+
+     <!-- Modal -->
+     <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">X</button>
+            <h2>Checkout</h2>
+            <!-- Checkout form -->
+            <form id="checkoutForm" onsubmit="return submitForm()">
+                <input type="hidden" id="product" name="product">
+                <input type="hidden" id="price" name="price">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="gcash">GCash</option>
+                    <option value="maya">Maya</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
-</div>
 
-<script>
-    function openModal(product, price) {
-        document.getElementById('product').value = product;
-        document.getElementById('price').value = price;
-        document.getElementById('checkoutModal').style.display = 'flex';
+   <!-- Payment Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeConfirmationModal()">X</button>
+            <h2>Payment Confirmation</h2>
+            <p>Email: <span id="confirmationEmail"></span></p>
+            <p>Payment Method: <span id="confirmationPaymentMethod"></span></p>
+            <p>Cost: <span id="confirmationCost">₱250</span></p>
+            <button onclick="confirmPayment()">Confirm</button>
+        </div>
+    </div>
+
+
+
+    <script>
+         function openModal(product, price) {
+            document.getElementById('product').value = product;
+            document.getElementById('price').value = price;
+            document.getElementById('checkoutModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+
+        function submitForm() {
+            const email = document.getElementById('email').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            const data = new FormData();
+            data.append('email', email);
+            data.append('payment-method', paymentMethod);
+
+            fetch('submit_payment.php', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(`Payment Confirmation: \nEmail: ${email}\nPayment Method: ${paymentMethod}\n\nServer Response: ${data}`);
+                closeModal();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+            return false;
+        }
+
+        function closeConfirmationModal() {
+            document.getElementById('confirmationModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('checkoutModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function fetchPaymentDetails(email, paymentMethod) {
+        const data = new FormData();
+        data.append('email', email);
+        fetch('fetch_payment_details.php', {
+            method: 'POST',
+            body: data
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                console.error(data.error);
+            } else {
+                document.getElementById('confirmationEmail').textContent = data.email;
+                document.getElementById('confirmationPaymentMethod').textContent = data.paymentMethod;
+                // Assuming fixed cost of ₱250
+                document.getElementById('confirmationCost').textContent = '₱250';
+                document.getElementById('confirmationModal').style.display = 'flex'; // Display the confirmation modal
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
 
-    function closeModal() {
-        document.getElementById('checkoutModal').style.display = 'none';
-    }
-
-    function submitForm() {
-        // Handle form submission here (e.g., send form data to a server)
-        // Return false to prevent default form submission
-        return false;
-    }
-</script>
-
-    <script src="index.js"></script>
+    </script>
+</body>
+</html>
+    </script>
 </body>
 </html>
