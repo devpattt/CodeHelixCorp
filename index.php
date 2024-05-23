@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philippines</title>
+    <title>CodeHelixCorp</title>
     <link rel="stylesheet" href="index.css">
     <style>
         /* Modal Styles */
@@ -308,7 +308,7 @@
             data.append('email', email);
             data.append('payment-method', paymentMethod);
 
-            fetch('submit_payment.php', {
+            fetch('fetch_payment_details.php', {
                 method: 'POST',
                 body: data
             })
@@ -336,32 +336,57 @@
         }
 
         function fetchPaymentDetails(email, paymentMethod) {
-        const data = new FormData();
-        data.append('email', email);
-        fetch('fetch_payment_details.php', {
-            method: 'POST',
-            body: data
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                console.error(data.error);
-            } else {
-                document.getElementById('confirmationEmail').textContent = data.email;
-                document.getElementById('confirmationPaymentMethod').textContent = data.paymentMethod;
-                // Assuming fixed cost of ₱250
-                document.getElementById('confirmationCost').textContent = '₱250';
-                document.getElementById('confirmationModal').style.display = 'flex'; // Display the confirmation modal
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    }
+            const data = new FormData();
+            data.append('email', email);
+
+            fetch('fetch_payment_details.php', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error(data.error);
+                } else {
+                    document.getElementById('confirmationEmail').textContent = data.email;
+                    document.getElementById('confirmationPaymentMethod').textContent = data.paymentMethod;
+                    document.getElementById('confirmationModal').style.display = 'flex'; // Display the confirmation modal
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function submitForm() {
+            const email = document.getElementById('email').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            const data = new FormData();
+            data.append('email', email);
+            data.append('payment-method', paymentMethod);
+
+            fetch('submit_payment.php', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(`Payment Confirmation: \nEmail: ${email}\nPayment Method: ${paymentMethod}\n\nServer Response: ${data}`);
+                closeModal();
+                // Call fetchPaymentDetails after successful form submission
+                fetchPaymentDetails(email, paymentMethod);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+            return false;
+        }
+
 
     </script>
 </body>
 </html>
-    </script>
 </body>
 </html>
