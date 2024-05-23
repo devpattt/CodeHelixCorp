@@ -75,6 +75,17 @@ header .menu{
     gap: 20px;
     font-weight: 500;
 }
+
+.menu  .logout-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
 /* css slider */
 .slider{
     height: 100vh;

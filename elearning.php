@@ -9,7 +9,70 @@
     <link rel="stylesheet" href="index.css">
     <title>e-learning</title>
 </head>
-
+<style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+        .modal-content h2 {
+            margin-top: 0;
+            color: black;
+        }
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            color: black;
+        }
+        .modal-content form input,
+        .modal-content form select,
+        .modal-content form button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .modal-content form button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .modal-content form button:hover {
+            background-color: #0056b3;
+        }
+        .close-btn {
+            background-color: red;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .button-container {
+            display: flex;
+        }
+        .button-container a {
+            margin-right: 10px; /* Adjust the spacing between links */
+        }
+    </style>
 <body>
 
     <nav>
@@ -18,7 +81,6 @@
         </div>
         <div class="nav-links">
             <a href="index.php">Home</a>
-            <a href="blog.php">Blog</a>
             <a href="about.php">About us</a>
         </div>
     </nav>
@@ -41,120 +103,112 @@
     <div class="item">
         <img src="img/pikpik1.png">
         <div class="details">
-            <h3>Master Cyber Security: Essential eLearning Series</h3>
+            <h3>Tips on how to secure your privacy online</h3>
             <div class="item-info">
                 <h4>E-Learning Material #1</h4>
             </div>
-            <p>Explore cybersecurity essentials with our eLearning material. From basic hygiene to advanced threat detection, our curriculum equips you with practical skills to defend against cyber threats. Engaging content and interactive exercises ensure you're prepared to safeguard digital assets effectively."</p>
-            <a href="">View More</a>
+            <p>Learn essential practices for protecting your personal information on the internet. This includes using strong, unique passwords, enabling two-factor authentication, being cautious with public Wi-Fi, and regularly updating your software and privacy settings to keep your data secure.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
     <div class="item">
         <img src="img/pipik2.png">
         <div class="details">
-            <h3>Cyber Security Essentials E-Learning Webinar</h3>
+            <h3>Learn to be safe Online</h3>
             <div class="item-info">
                 <h4>E-Learning Material #2</h4>
             </div>
-            <p>Unlock the secrets of cybersecurity with our innovative eLearning content. From understanding the psychology behind cyber attacks to implementing robust defense strategies, our material covers the full spectrum of digital security. Dive into real-world case studies, interactive simulations, and hands-on exercises to master the art of protecting data in today's digital age. Whether you're a beginner or an experienced professional, our comprehensive curriculum will elevate your cybersecurity prowess and empower you to navigate the ever-evolving landscape of online threats</p>
-            <a href="#">View More</a> 
+            <p>Access a comprehensive collection of resources designed to enhance your understanding of cyber security. These materials include tutorials, articles, and interactive content covering a wide range of topics from basic security principles to advanced threat mitigation techniques.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
     <div class="item">
         <img src="img/pikpik3.png">
         <div class="details">
-            <h3>Calle Crisologo</h3>
+            <h3>Cyber security learning materials</h3>
             <div class="item-info">
-                <h4>Vigan City, Ilocos Sur</h4>
+                <h4>E-Learning Material #3</h4>
             </div>
-            <p>Calle Crisologo is a charming cobblestone street lined with well-prese
-                rved Spanish colonial-era houses. It offers a glimpse into the Philip
-                pines' colonial past, with its heritage buildings, horse-drawn carria
-                ges, and nostalgic atmosphere.</p>
-            <a href="calle.php">View More</a> <!-- Add a View More link -->
+            <p>Understand the various types of cyber security threats, including malware, ransomware, phishing, and DDoS attacks. Learn how these threats operate, their potential impact, and the best practices for preventing and responding to such incidents.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
     <div class="item">
         <img src="img/pikpik4.png">
         <div class="details">
-            <h3>Las Cabanas Beach</h3>
+            <h3>Cyber security threats</h3>
             <div class="item-info">
-                <h4>El Nido, Palawan</h4>
+                <h4>E-Learning Material #4</h4>
             </div>
-            <p> Located in El Nido, Palawan, Philippines, it offers stunning white sandy beaches and crystal-clear waters, perfect for swimming and relaxing.</p>
-            <a href="LasCabanas.php">View More</a> <!-- Add a View More link -->
+            <p>Gain a foundational understanding of cyber security, including its importance, key concepts, and the roles and responsibilities of individuals and organizations in maintaining digital security. This section provides a broad overview suitable for beginners.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
     <div class="item">
         <img src="img/pikpik5.png">
         <div class="details">
-            <h3>Little Boracay </h3>
+            <h3>Understand Cyber Security</h3>
             <div class="item-info">
-                <h4>Nasugbu, Batangas</h4>
+                <h4>E-Learning Material #5</h4>
             </div>
-            <p> A beautiful beach destination known for its fine white sand and clear blue waters. It offers a serene and picturesque environment
-                 similar to the renowned Boracay Island, albeit on a smaller scale. Visitors can enjoy swimming, sunbathing, and various water activ
-                 ities such as snorkeling and kayaking.</p>
-            <a href="Boracay.php">View More</a> <!-- Add a View More link -->
+            <p> Delve into curated learning materials that offer in-depth knowledge on specific cyber security topics. These resources are structured to help learners build a solid foundation and progress to more complex subjects in the field of cyber security.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
 
-
-
-
     <div class="item">
-        <img src="img/fortsantiagooooooooo.jpg">
+        <img src="img/e-learning 33.png">
         <div class="details">
-            <h3>Fort Santiago</h3>
+            <h3>Cyber Security Learning Material</h3>
             <div class="item-info">
-                <h4> Intramuros, Manila</h4>
+                <h4> E-Learning Material #6</h4>
             </div>
-            <p> A historical citadel located in Intramuros, Manila, Philippines, it played a significant role in the country's history during the Spanish colonial period.</p>
-            <a href="FortSantiago.php">View More</a> <!-- Add a View More link -->
+            <p>Revisit critical tips for protecting your online privacy, emphasizing practical steps and tools. This includes advice on managing digital footprints, securing communications, and understanding the privacy policies of the services you use.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
     <div class="item">
-        <img src="img/cannnnnnnnnnnnnnnn.jpg">
+        <img src="img/e-learning 2.png">
         <div class="details">
-            <h3>Chamantad Tinan</h3>
+            <h3>Tips on how to secure your privacy online</h3>
             <div class="item-info">
-                <h4>Batanes, Philippines</h4>
+                <h4>E-Learning Material #7</h4>
             </div>
-            <p> Found in Batanes, Philippines, it's a breathtaking rolling hills landscape with stunning views of the sea and cliffs, perfect for hiking and photography.</p>
-            <a href="Chamantad.php">View More</a> <!-- Add a View More link -->
+            <p> Explore a variety of learning materials tailored for different levels of expertise. Whether you are a beginner or an advanced user, find resources that cater to your needs, including video tutorials, hands-on labs, and detailed guides.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
     <div class="item">
-        <img src="img/Basco_(Naidi)_Lighthouse.jpg">
+        <img src="img/e-learning 3.png">
         <div class="details">
-            <h3>Basco Lighthouse</h3>
+            <h3>Cyber security learning materials</h3>
             <div class="item-info">
-                <h4>Basco, Batanes</h4>
+                <h4>E-Learning Material #8</h4>
             </div>
-            <p>Standing tall in Basco, Batanes, Philippines, it offers panoramic views of the West Philippine Sea and the surrounding lush landscapes.</p>
-            <a href="Basco.php">View More</a> <!-- Add a View More link -->
+            <p>Engage with a diverse set of educational content aimed at improving your cyber security skills. This section offers access to webinars, e-books, and practice scenarios that simulate real-world security challenges.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
     <div class="item">
-        <img src="img/Hundred-Islands-Christ-the-Redeemer-Statue-by-AntonNawalangMalay-via-Wikimedia-cc.jpg">
+        <img src="img/pikpik3.png">
         <div class="details">
-            <h3>Hundred Islands</h3>
+            <h3>Cyber security learning materials</h3>
             <div class="item-info">
-                <h4>Alaminos, Pangasinan</h4>
+                <h4>E-Learning Material #9</h4>
             </div>
-            <p>Situated in Alaminos, Pangasinan, Philippines, this collection of approximately 124 islands offers pristine beaches, caves, and clear waters ideal for island hopping and snorkeling.</p>
-            <a href="Island.php">View More</a> <!-- Add a View More link -->
+            <p>Immerse yourself in extensive learning resources designed to deepen your knowledge of cyber security. This includes case studies, research papers, and expert interviews that provide insights into the latest trends and developments in the cyber security landscape.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
     <div class="item">
-        <img src="img/daa23bdc43ba2c8b50_hangingcoffin06item.jpg">
+        <img src="img/pikpik3.png">
         <div class="details">
-            <h3>Hanging Coffins and Sumaging Cave</h3>
+            <h3>Cyber security learning materials</h3>
             <div class="item-info">
-                <h4>Sagada, Mountain Province</h4>
+                <h4>E-Learning Material #10</h4>
             </div>
-            <p>  Located in Sagada, Mountain Province, Philippines, this site is known for its ancient hanging coffins suspended on limestone cliffs and the vast network of caves like Sumaging Cave, which is famous for its unique rock formations and underground rivers.</p>
-            <a href="HCoffins.php">View More</a> <!-- Add a View More link -->
+            <p>Explore a variety of learning materials tailored for different levels of expertise. Whether you are a beginner or an advanced user, find resources that cater to your needs, including video tutorials, hands-on labs, and detailed guides.</p>
+            <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
         </div>
     </div>
 </div>
@@ -169,6 +223,124 @@
         </div>
         <p>Copyright ©2024, All rights reserved.</p>
     </footer>
+
+        <!-- Modal -->
+        <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">X</button>
+            <h2>Checkout</h2>
+            <!-- Checkout form -->
+            <form id="checkoutForm" onsubmit="return submitForm()">
+                <input type="hidden" id="product" name="product">
+                <input type="hidden" id="price" name="price">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="gcash">GCash</option>
+                    <option value="maya">Maya</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+         function openModal(product, price) {
+            document.getElementById('product').value = product;
+            document.getElementById('price').value = price;
+            document.getElementById('checkoutModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+
+        function submitForm() {
+            const email = document.getElementById('email').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            const data = new FormData();
+            data.append('email', email);
+            data.append('payment-method', paymentMethod);
+
+            fetch('fetch_payment_details.php', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(`Payment Confirmation: \nEmail: ${email}\nPayment Method: ${paymentMethod}\n\nServer Response: ${data}`);
+                closeModal();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+            return false;
+        }
+
+        function closeConfirmationModal() {
+            document.getElementById('confirmationModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('checkoutModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function fetchPaymentDetails(email, paymentMethod) {
+            const data = new FormData();
+            data.append('email', email);
+
+            fetch('fetch_payment_details.php', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error(data.error);
+                } else {
+                    document.getElementById('confirmationEmail').textContent = data.email;
+                    document.getElementById('confirmationPaymentMethod').textContent = data.paymentMethod;
+                    document.getElementById('confirmationModal').style.display = 'flex'; // Display the confirmation modal
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function submitForm() {
+            const email = document.getElementById('email').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            const data = new FormData();
+            data.append('email', email);
+            data.append('payment-method', paymentMethod);
+
+            fetch('submit_payment.php', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(`Payment Confirmation: \nEmail: ${email}\nPayment Method: ${paymentMethod}\n\nServer Response: ${data}`);
+                closeModal();
+                // Call fetchPaymentDetails after successful form submission
+                fetchPaymentDetails(email, paymentMethod);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+            return false;
+        }
+    </script>
     <script src="script.js"></script>
 
 </body>

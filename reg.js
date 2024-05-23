@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const signUpButton = document.getElementById('signUpButton');
     const container = document.getElementById('container');
 
+    // Event listener to switch between sign-in and sign-up forms
     signInButton.addEventListener('click', () => {
         container.classList.remove("active");
     });
@@ -10,51 +11,50 @@ document.addEventListener('DOMContentLoaded', () => {
     signUpButton.addEventListener('click', () => {
         container.classList.add("active");
     });
-});
 
-        // Password policy validation function
-        function validatePassword(password) {
-            // Example password policy: At least 8 characters with at least one uppercase letter and one digit
-            const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
-            return passwordRegex.test(password);
-        }
+    // Sign-up form submission handler
+    const signUpForm = document.querySelector('.sign-up-form');
+    signUpForm.addEventListener('submit', handleSignUpFormSubmission);
 
-        // Example function to handle form submission and password policy validation
-        function handleSignUpFormSubmission(event) {
-            event.preventDefault();
-            const passwordInput = document.querySelector('.sign-up-form input[name="password"]');
-            const password = passwordInput.value;
-            const passwordPolicyError = document.getElementById('signUpPasswordPolicy');
-
-            if (!validatePassword(password)) {
-                passwordPolicyError.textContent = "Password must be at least 8 characters long and contain at least one uppercase letter and one digit.";
-                return;
-            }
-
-            // Reset password policy error message
-            passwordPolicyError.textContent = "";
-
-            // Handle reCAPTCHA verification
-            const recaptchaResponse = grecaptcha.getResponse();
-            if (!recaptchaResponse) {
-                alert("Please complete the reCAPTCHA.");
-                return;
-            }
-
-            // Proceed with form submission
-            // Example: Submit the form data to the server
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const signUpForm = document.querySelector('.sign-up-form');
-            signUpForm.addEventListener('submit', handleSignUpFormSubmission);
-        });
-
-document.addEventListener('DOMContentLoaded', () => {
+    // Sign-in form submission handler
     const signInForm = document.querySelector('.sign-in-form');
     signInForm.addEventListener('submit', handleSignInFormSubmission);
 });
 
+// Password policy validation function
+function validatePassword(password) {
+    // Password policy: At least 8 characters with at least one uppercase letter and one digit
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+    return passwordRegex.test(password);
+}
+
+// Sign-up form submission handler
+function handleSignUpFormSubmission(event) {
+    event.preventDefault();
+    const passwordInput = document.querySelector('.sign-up-form input[name="password"]');
+    const password = passwordInput.value;
+    const passwordPolicyError = document.getElementById('signUpPasswordPolicy');
+
+    if (!validatePassword(password)) {
+        passwordPolicyError.textContent = "Password must be at least 8 characters long and contain at least one uppercase letter and one digit.";
+        return;
+    }
+
+    // Reset password policy error message
+    passwordPolicyError.textContent = "";
+
+    // Handle reCAPTCHA verification
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+        alert("Please complete the reCAPTCHA.");
+        return;
+    }
+
+    // Proceed with form submission
+    signUpForm.submit();
+}
+
+// Sign-in form submission handler
 function handleSignInFormSubmission(event) {
     event.preventDefault();
     const usernameInput = document.querySelector('.sign-in-form input[name="user_name"]');
@@ -64,7 +64,6 @@ function handleSignInFormSubmission(event) {
 
     // Example: Check the username and password against the database
     // Simulate backend logic for demonstration purposes
-    // Replace this with actual backend logic to verify the credentials
     const isUserValid = checkUserCredentials(username, password);
 
     if (!isUserValid) {
@@ -88,12 +87,3 @@ function checkUserCredentials(username, password) {
 
     return username === validUsername && password === validPassword;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const button = document.getElementById('sign-in');
-    
-    button.addEventListener('click', function() {
-        alert('Button clicked!');
-        // You can perform any action you want to test here
-    });
-});

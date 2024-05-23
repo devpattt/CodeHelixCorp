@@ -77,10 +77,9 @@
         <nav>
             <ul class="menu">
                 <li><a href="#list">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#att">Blogs</a></li>
                 <li><a href="elearning.php">E-Learning Materials</a></li> 
-                <li><a href="reg.php">Log-out</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="reg.php" class="logout-btn">Log-out</a></li>
             </ul>
         </nav>
     </header>
@@ -150,31 +149,31 @@
             <div class="item active">   
                 <img src="img/pikpik1.png" alt="E-Learning #1">
                 <div class="content">
-                    E-Learning #1
+               
                 </div>
             </div>
             <div class="item">
                 <img src="img/pipik2.png" alt="E-Learning #2">
                 <div class="content">
-                    E-Learning #2
+             
                 </div>
             </div>
             <div class="item">
                 <img src="img/pikpik3.png" alt="E-Learning #3">
                 <div class="content">
-                    E-Learning #3
+                
                 </div>
             </div>
             <div class="item">
                 <img src="img/pikpik4.png" alt="E-Learning #4">
                 <div class="content">
-                    E-Learning #4
+                
                 </div>
             </div>
             <div class="item">
                 <img src="img/pikpik5.png" alt="E-Learning #5">
                 <div class="content">
-                    E-Learning #5
+              
                 </div>
             </div>
         </div>
@@ -186,7 +185,10 @@
         </div>
         <div class="right">
             <h5>CodeHelixCorp</h5>
-            <p>"Embracing every challenge and opportunity, I've grown alongside this company, transforming knowledge into impact."</p>
+            <p>In today's digital age, mastering the skills to protect yourself online is essential.
+                 As we navigate through various online platforms, understanding how to safeguard our personal 
+                 information and privacy becomes increasingly important. By learning to be safe online, you empower 
+                 yourself with the knowledge to prevent cyber threats, secure your data, and maintain your digital well-being. Embrace the importance of online safety and make informed decisions to protect yourself in the vast digital landscape.</p>
         </div>
     </div>
 
@@ -198,9 +200,9 @@
         </div>
         <div class="attract-items">
             <div class="item">
-                <img src="img/pikpik3.png" alt="Product Image 1">
+                <img src="img/e-learning 3.png" alt="Product Image 1">
                 <div class="info">
-                    <h4>ALL IN PACKAGE (3 Packages of E-Learning Materials)</h4>
+                    <h4>ALL IN PACKAGE </h4>
                     <p>One time purchase of ₱250</p>
                     <div class="button-container">
                         <a href="#" onclick="openModal('Product 1', 250)">Buy Now <i class='bx bx-link-external'></i></a>
@@ -209,9 +211,9 @@
                 </div>
             </div>
             <div class="item">
-                <img src="img/pikpik1.png" alt="Product Image 2">
+                <img src="img/e-learning 2.png" alt="Product Image 2">
                 <div class="info">
-                    <h4>ALL IN PACKAGE (3 Packages of E-Learning Materials)</h4>
+                    <h4>ALL IN PACKAGE </h4>
                     <p>One time purchase of ₱250</p>
                     <div class="button-container">
                         <a href="#" onclick="openModal('Product 2', 250)">Buy Now <i class='bx bx-link-external'></i></a>
@@ -222,7 +224,7 @@
             <div class="item">
                 <img src="img/pikpik5.png" alt="Product Image 3">
                 <div class="info">
-                    <h4>ALL IN PACKAGE (3 Packages of E-Learning Materials)</h4>
+                    <h4>ALL IN PACKAGE</h4>
                     <p>One time purchase of ₱250</p>
                     <div class="button-container">
                         <a href="#" onclick="openModal('Product 3', 250)">Buy Now <i class='bx bx-link-external'></i></a>
@@ -369,9 +371,8 @@
 
             return false;
         }
-
-
     </script>
+  <script src="index.js"></script>
 </body>
 </html>
 </body>

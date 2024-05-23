@@ -54,17 +54,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
         if (!empty($user_name) && !empty($email) && !empty($password) && !is_numeric($user_name)) {
-            $user_id = random_num(20);
-            $query = "INSERT INTO users (user_id, user_name, password, email) VALUES (?, ?, ?, ?)";
-            $stmt = mysqli_prepare($con, $query);
-
-            if ($stmt) {
-                mysqli_stmt_bind_param($stmt, "ssss", $user_id, $user_name, $hashedPassword, $email);
-                mysqli_stmt_execute($stmt);
-                header("Location: reg.php");
-                die;
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo '<div class="error-message">Invalid email address. Please try again.</div>';
             } else {
-                echo '<div class="error-message">Failed to prepare the SQL statement.</div>';
+                $user_id = random_num(20);
+                $query = "INSERT INTO users (user_id, user_name, password, email) VALUES (?, ?, ?, ?)";
+                $stmt = mysqli_prepare($con, $query);
+
+                if ($stmt) {
+                    mysqli_stmt_bind_param($stmt, "ssss", $user_id, $user_name, $hashedPassword, $email);
+                    mysqli_stmt_execute($stmt);
+                    header("Location: reg.php");
+                    die;
+                } else {
+                    echo '<div class="error-message">Failed to prepare the SQL statement.</div>';
+                }
             }
         } else {
             echo '<div class="error-message">Please fill in all fields correctly.</div>';
@@ -89,11 +93,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <div class="container" id="container">
     <!-- Sign-up form with reCAPTCHA and password policy validation -->
     <div class="form-container sign-up">
-        <form action="reg.php" class="sign-up-form" method="POST">
+        <form action="reg.php" class="sign-up-form" method="POST" onsubmit="return validatePassword()">
             <h1>Create Account</h1>
-            <input type="text" name="user_name" placeholder="Username" />
-            <input type="text" name="email" placeholder="Email" />
-            <input type="password" name="password" placeholder="Password" />
+            <input type="text" name="user_name" placeholder="Username" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="password" name="password" id="password" placeholder="Password" required />
             <span class="password-policy-error" id="signUpPasswordPolicy"></span>
             <div class="g-recaptcha" data-sitekey="6LdR4OApAAAAAL_ZBVwp7Gw_RbJD-4_L2PxeODJ-"></div>
             <input type="submit" name="sign-up" id="registerBtn" class="btn solid" value="Sign up" />
@@ -104,8 +108,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="form-container sign-in">
         <form action="reg.php" class="sign-in-form" method="POST">
             <h1>Sign In</h1>
-            <input type="text" name="user_name" placeholder="Username" />
-            <input type="password" name="password" placeholder="Password" />
+            <input type="text" name="user_name" placeholder="Username" required />
+            <input type="password" name="password" placeholder="Password" required />
             <div class="g-recaptcha" data-sitekey="6LdR4OApAAAAAL_ZBVwp7Gw_RbJD-4_L2PxeODJ-"></div>
             <input type="submit" name="sign-in" id="loginBtn" value="Login" class="btn solid" />
         </form>
@@ -114,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="toggle-container">
         <div class="toggle">
             <div class="toggle-panel toggle-left">
-            <img src="img/Codehelixlogo.png" alt="Your Logo" class="logo"> <br>
+                <img src="img/Codehelixlogo.png" alt="Your Logo" class="logo"> <br>
                 <h1>Welcome Back!</h1>
                 <p>it is what is it</p>
                 <button class="hidden" id="signInButton">Sign In</button>
@@ -129,26 +133,38 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
 </div>
 
-    
- 
-    <script>
-     document.addEventListener('DOMContentLoaded', () => {
-    const signInButton = document.getElementById('signInButton');
-    const signUpButton = document.getElementById('signUpButton');
-    const container = document.getElementById('container');
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const signInButton = document.getElementById('signInButton');
+        const signUpButton = document.getElementById('signUpButton');
+        const container = document.getElementById('container');
 
-    signInButton.addEventListener('click', () => {
-        container.classList.remove("active");
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("active");
+        });
     });
 
-    signUpButton.addEventListener('click', () => {
-        container.classList.add("active");
-    });
-});
+    function validatePassword() {
+        const passwordInput = document.getElementById('password');
+        const password = passwordInput.value;
+        const passwordPolicyError = document.getElementById('signUpPasswordPolicy');
 
+        // Password policy: At least 8 characters with at least one uppercase letter and one digit
+        const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
 
+        if (!passwordRegex.test(password)) {
+            passwordPolicyError.textContent = "Password must be at least 8 characters long and contain at least one uppercase letter and one digit.";
+            return false; // Prevent form submission
+        } else {
+            passwordPolicyError.textContent = ""; // Clear any previous error messages
+            return true; // Allow form submission
+        }
+    }
 </script>
 
 </body>
-
 </html>
