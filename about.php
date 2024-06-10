@@ -14,7 +14,7 @@
 
     <nav>
         <div class="logo">
-            <a href="#">CodeHelixCorp</a>
+            <a href="#">CodeHelix</a>
         </div>
         <div class="nav-links">
             <a href="index.php">Home</a>
