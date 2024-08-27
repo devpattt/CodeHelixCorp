@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeHelixCorp</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="indexsahotel.css">
     <style>
         /* Modal Styles */
         .modal {
@@ -372,7 +372,7 @@
             return false;
         }
     </script>
-  <script src="index.js"></script>
+  <script src="indexsahotel.js"></script>
 </body>
 </html>
 </body>
