@@ -66,7 +66,7 @@
             display: flex;
         }
         .button-container a {
-            margin-right: 10px; /* Adjust the spacing between links */
+            margin-right: 10px;
         }
     </style>
 </head>
